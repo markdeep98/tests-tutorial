@@ -6,6 +6,11 @@ RSpec.describe ArticlesController, type: :controller do
       get :index
       expect(response).to be_success
     end
+
+    it "has a 200 status code" do
+      get :index
+      expect(response.status).to eq(200)
+    end
   end
 
   context "GET #show" do
@@ -14,5 +19,5 @@ RSpec.describe ArticlesController, type: :controller do
       get :show, params: { id: article }
       expect(response).to be_success
     end
-  end 
+  end
 end
